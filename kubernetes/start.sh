@@ -7,5 +7,4 @@ kubectl create secret generic mysql-secret \
   --from-literal=auth-password='my-secret-pw' \
   --from-literal=secret-key='xco0sr0fh4e52x03g9mv'
 
-
 kubectl create configmap mysql-config --from-file=init.sql=init.sql
