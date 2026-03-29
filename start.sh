@@ -1,6 +1,8 @@
 #!/bin/bash
 k3d cluster delete weatherapp-cluster
-k3d cluster create weatherapp-cluster --servers 1 --agents 1 --port 3306:3306@loadbalancer
+k3d cluster create weatherapp-cluster --servers 1 --agents 1 \
+  --port 3306:3306@loadbalancer \
+  --port 8080:8080@loadbalancer
 
 kubectl create secret generic mysql-secret \
   --from-literal=root-password='secure-root-pw' \
